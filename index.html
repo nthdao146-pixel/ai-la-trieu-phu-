@@ -1,0 +1,505 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="zh-CN"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;谁是百万富翁&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #0b0c10;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 800px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #1a1a2e;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 32px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: fadeIn 0.8s ease-in-out;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 2px solid #2e2e4a;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes fadeIn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>from { opacity: 0; transform: translateY(20px); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>to { opacity: 1; transform: translateY(0); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.message-box {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateX(-50%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px 24px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 1000;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: opacity 0.5s ease-in-out;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-width: 250px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.message-box.success { background-color: #10b981; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.message-box.error { background-color: #ef4444; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.message-box.hidden { opacity: 0; pointer-events: none; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-answer {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #2e2e4a;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #4a4a6e;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s ease-in-out;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-answer:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #4a4a6e;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: scale(1.02);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-answer.correct {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #10b981;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: #0d8a5f;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: pulseCorrect 1s infinite;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-answer.incorrect {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #ef4444;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: #c42f2f;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-answer.disabled {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #3e3e5a;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #888;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: not-allowed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.7;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.lifeline-btn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #2e2e4a;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 9999px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 2px solid #4a4a6e;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s ease-in-out;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.lifeline-btn:hover:not(:disabled) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #4a4a6e;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: scale(1.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.lifeline-btn:disabled {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.5;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: not-allowed;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes pulseCorrect {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0% { transform: scale(1); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>50% { transform: scale(1.05); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>100% { transform: scale(1); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.lifeline-popover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translate(-50%, -50%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #1a1a2e;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 2px solid #4a4a6e;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 10;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 400px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="bg-gray-900 flex items-center justify-center min-h-screen"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="game-container" class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1 id="title" class="text-4xl font-bold text-center mb-8 text-yellow-400"&gt;谁是百万富翁&lt;/h1&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Màn hình bắt đầu --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="start-screen" class="text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-gray-300 mb-8 text-lg"&gt;欢迎来到终极知识问答游戏！&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="start-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>开始游戏</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Màn hình chính của trò chơi --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="quiz-screen" class="hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Khu vực quyền trợ giúp --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="lifelines" class="flex justify-around mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="lifeline-5050" class="lifeline-btn"&gt;&lt;i class="fas fa-divide"&gt;&lt;/i&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="lifeline-audience" class="lifeline-btn"&gt;&lt;i class="fas fa-users"&gt;&lt;/i&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="lifeline-phone" class="lifeline-btn"&gt;&lt;i class="fas fa-phone-alt"&gt;&lt;/i&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Khu vực câu hỏi --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="question-container" class="mb-6 bg-gray-800 p-6 rounded-lg border border-yellow-400"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p id="question-text" class="text-lg font-semibold mb-4 text-center"&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div id="answers-container" class="grid grid-cols-1 md:grid-cols-2 gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Khu vực tiền thưởng --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex justify-between items-center text-gray-400 text-sm mt-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span id="prize-level" class="text-yellow-400 font-bold"&gt;奖金级别: 100&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span id="question-counter"&gt;问题 1/15&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Màn hình kết thúc --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="end-screen" class="hidden text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl font-bold text-yellow-400 mb-4"&gt;游戏结束！&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p id="final-prize" class="text-2xl text-white mb-8"&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="restart-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>再玩一次</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Hộp thoại thông báo --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="message-box" class="message-box hidden"&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Hộp thoại quyền trợ giúp --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="popover-container" class="hidden"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.addEventListener('DOMContentLoaded', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Danh sách các câu hỏi</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const questions = [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>question: "越南的首都是哪个城市？",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>answers: ["岘港", "河内", "胡志明市", "顺化"],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>correctAnswer: "河内"</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>question: "哪个国家被称为“旭日之国”？",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>answers: ["中国", "韩国", "日本", "泰国"],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>correctAnswer: "日本"</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>question: "世界上最长的河流是哪条？",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>answers: ["密西西比河", "伏尔加河", "尼罗河", "亚马逊河"],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>correctAnswer: "亚马逊河"</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>question: "哪个城市以埃菲尔铁塔闻名？",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>answers: ["伦敦", "巴黎", "柏林", "罗马"],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>correctAnswer: "巴黎"</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>question: "华特·迪士尼的第一部电影叫什么名字？",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>answers: ["《白雪公主与七个小矮人》", "《木偶奇遇记》", "《小鹿斑比》", "《幻想曲》"],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>correctAnswer: "《白雪公主与七个小矮人》"</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>question: "谁是微软的创始人？",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>answers: ["史蒂夫·乔布斯", "比尔·盖茨", "马克·扎克伯格", "杰夫·贝佐斯"],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>correctAnswer: "比尔·盖茨"</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>question: "哪个行星离太阳最近？",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>answers: ["金星", "水星", "地球", "火星"],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>correctAnswer: "水星"</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>question: "《翘传》的作者是谁？",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>answers: ["阮廌", "胡春香", "阮攸", "阮秉谦"],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>correctAnswer: "阮攸"</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>question: "哪个国家拥有吉萨金字塔？",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>answers: ["伊拉克", "埃及", "墨西哥", "希腊"],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>correctAnswer: "埃及"</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>question: "世界上哪个海洋最大？",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>answers: ["印度洋", "大西洋", "太平洋", "北冰洋"],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>correctAnswer: "太平洋"</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>question: "化学元素中，符号为“H”的是什么？",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>answers: ["氦", "氢", "𨨏", "氢"],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>correctAnswer: "氢"</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>question: "哪种动物可以改变肤色？",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>answers: ["北极熊", "变色龙", "鲸鱼", "狮子"],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>correctAnswer: "变色龙"</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>question: "哪种水果是纽约的象征？",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>answers: ["苹果", "橙子", "草莓", "香蕉"],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>correctAnswer: "苹果"</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>question: "哪项运动使用球杆和小球在草地上进行？",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>answers: ["棒球", "网球", "高尔夫", "橄榄球"],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>correctAnswer: "高尔夫"</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>question: "谁是第一个登上月球的人？",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>answers: ["巴兹·奥尔德林", "尤里·加加林", "尼尔·阿姆斯特朗", "迈克尔·柯林斯"],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>correctAnswer: "尼尔·阿姆斯特朗"</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Mức tiền thưởng</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const prizeLevels = ["0", "100", "200", "400", "800", "1.600", "3.200", "6.400", "12.800", "25.000", "50.000", "100.000", "200.000", "400.000", "1.000.000"];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Các biến trạng thái của trò chơi</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let currentQuestionIndex = 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let currentPrize = 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let questionsShuffled = [];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let lifelines = {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>'5050': true,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>'audience': true,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>'phone': true</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Lấy các phần tử DOM</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const startScreen = document.getElementById('start-screen');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const quizScreen = document.getElementById('quiz-screen');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const endScreen = document.getElementById('end-screen');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const startBtn = document.getElementById('start-btn');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const restartBtn = document.getElementById('restart-btn');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const questionText = document.getElementById('question-text');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const answersContainer = document.getElementById('answers-container');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const prizeLevelDisplay = document.getElementById('prize-level');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const questionCounter = document.getElementById('question-counter');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const finalPrizeDisplay = document.getElementById('final-prize');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const messageBox = document.getElementById('message-box');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const popoverContainer = document.getElementById('popover-container');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Nút trợ giúp</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const lifeline5050Btn = document.getElementById('lifeline-5050');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const lifelineAudienceBtn = document.getElementById('lifeline-audience');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const lifelinePhoneBtn = document.getElementById('lifeline-phone');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Hàm xáo trộn mảng</p>
+<p class="p1"><span class="Apple-converted-space">            </span>function shuffle(array) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>for (let i = array.length - 1; i &gt; 0; i--) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const j = Math.floor(Math.random() * (i + 1));</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>[array[i], array[j]] = [array[j], array[i]];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Hiển thị một tin nhắn tạm thời</p>
+<p class="p1"><span class="Apple-converted-space">            </span>function showMessage(text, isCorrect) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>messageBox.textContent = text;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>messageBox.classList.remove('hidden', 'success', 'error');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>messageBox.classList.add(isCorrect ? 'success' : 'error');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>messageBox.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}, 1500);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Hiển thị câu hỏi hiện tại</p>
+<p class="p1"><span class="Apple-converted-space">            </span>function showQuestion() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (currentQuestionIndex &gt;= questionsShuffled.length) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>endGame(true); // Thắng cuộc</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const currentQuestion = questionsShuffled[currentQuestionIndex];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>questionText.textContent = currentQuestion.question;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>answersContainer.innerHTML = '';</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Xáo trộn các đáp án</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const answersShuffled = [...currentQuestion.answers];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>shuffle(answersShuffled);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>answersShuffled.forEach(answer =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const button = document.createElement('button');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>button.textContent = answer;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>button.classList.add('btn-answer', 'font-medium', 'py-4', 'px-4', 'rounded-lg', 'text-left', 'transition-colors', 'w-full');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>button.addEventListener('click', () =&gt; selectAnswer(answer, button));</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>answersContainer.appendChild(button);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>questionCounter.textContent = `问题 ${currentQuestionIndex + 1}/${questions.length}`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>prizeLevelDisplay.textContent = `奖金级别: ${prizeLevels[currentQuestionIndex]}`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Xử lý khi người chơi chọn đáp án</p>
+<p class="p1"><span class="Apple-converted-space">            </span>function selectAnswer(selectedAnswer, selectedButton) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const currentQuestion = questionsShuffled[currentQuestionIndex];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const allButtons = answersContainer.querySelectorAll('button');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Vô hiệu hóa tất cả các nút để ngăn người chơi click lại</p>
+<p class="p1"><span class="Apple-converted-space">                </span>allButtons.forEach(btn =&gt; btn.disabled = true);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (selectedAnswer === currentQuestion.correctAnswer) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>selectedButton.classList.add('correct');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>showMessage("回答正确！", true);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>currentQuestionIndex++;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>currentPrize = prizeLevels[currentQuestionIndex - 1];</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>showQuestion();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}, 2000);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>selectedButton.classList.add('incorrect');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const correctButton = Array.from(allButtons).find(btn =&gt; btn.textContent === currentQuestion.correctAnswer);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>correctButton.classList.add('correct');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>showMessage(`很抱歉！正确答案是: ${currentQuestion.correctAnswer}`, false);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>endGame(false); // Thua cuộc</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}, 2000);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Xử lý quyền trợ giúp 50/50</p>
+<p class="p1"><span class="Apple-converted-space">            </span>lifeline5050Btn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (!lifelines['5050']) return;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>lifelines['5050'] = false;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>lifeline5050Btn.disabled = true;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>const currentQuestion = questionsShuffled[currentQuestionIndex];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const allButtons = answersContainer.querySelectorAll('button');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const incorrectAnswers = Array.from(allButtons).filter(btn =&gt; btn.textContent !== currentQuestion.correctAnswer);</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Chọn ngẫu nhiên 2 đáp án sai để ẩn đi</p>
+<p class="p1"><span class="Apple-converted-space">                </span>shuffle(incorrectAnswers);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>incorrectAnswers[0].classList.add('hidden', 'disabled');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>incorrectAnswers[1].classList.add('hidden', 'disabled');</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>showMessage("已使用50/50。两个错误答案已被移除。", true);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Xử lý quyền trợ giúp Hỏi ý kiến khán giả</p>
+<p class="p1"><span class="Apple-converted-space">            </span>lifelineAudienceBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (!lifelines['audience']) return;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>lifelines['audience'] = false;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>lifelineAudienceBtn.disabled = true;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>const currentQuestion = questionsShuffled[currentQuestionIndex];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const allAnswers = Array.from(answersContainer.querySelectorAll('button')).map(btn =&gt; btn.textContent);</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Tạo kết quả giả lập</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const pollResults = {};</p>
+<p class="p1"><span class="Apple-converted-space">                </span>allAnswers.forEach(ans =&gt; pollResults[ans] = 0);</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>let remainingPercentage = 100;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>pollResults[currentQuestion.correctAnswer] = Math.floor(Math.random() * (70 - 40 + 1)) + 40; // Đáp án đúng luôn có % cao nhất</p>
+<p class="p1"><span class="Apple-converted-space">                </span>remainingPercentage -= pollResults[currentQuestion.correctAnswer];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Phân bổ ngẫu nhiên phần còn lại cho các đáp án sai</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const incorrectAnswers = allAnswers.filter(ans =&gt; ans !== currentQuestion.correctAnswer);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (incorrectAnswers.length &gt; 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const firstIncorrect = incorrectAnswers[0];</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>pollResults[firstIncorrect] = Math.floor(Math.random() * remainingPercentage);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>remainingPercentage -= pollResults[firstIncorrect];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (incorrectAnswers.length &gt; 1) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>pollResults[incorrectAnswers[1]] = Math.floor(Math.random() * remainingPercentage);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>remainingPercentage -= pollResults[incorrectAnswers[1]];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (incorrectAnswers.length &gt; 2) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>pollResults[incorrectAnswers[2]] = remainingPercentage;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>let popoverContent = `&lt;div class="bg-gray-700 p-4 rounded-lg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;h3 class="text-xl font-bold mb-4"&gt;观众意见&lt;/h3&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>for (const [answer, percent] of Object.entries(pollResults)) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>popoverContent += `&lt;p class="mb-2"&gt;${answer}: ${percent}%&lt;/p&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>popoverContent += `&lt;/div&gt;`;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>createPopover("观众投票结果:", popoverContent);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Xử lý quyền trợ giúp Gọi điện thoại cho người thân</p>
+<p class="p1"><span class="Apple-converted-space">            </span>lifelinePhoneBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (!lifelines['phone']) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>lifelines['phone'] = false;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>lifelinePhoneBtn.disabled = true;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>const currentQuestion = questionsShuffled[currentQuestionIndex];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const friendAdvice = `嗯... 我认为答案是 ${currentQuestion.correctAnswer}。祝你好运！`;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>createPopover("亲友的建议:", `&lt;p&gt;${friendAdvice}&lt;/p&gt;`);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Tạo hộp thoại popover</p>
+<p class="p1"><span class="Apple-converted-space">            </span>function createPopover(title, content) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>popoverContainer.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="lifeline-popover"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-2xl font-bold mb-4"&gt;${title}&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;${content}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button id="close-popover" class="mt-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-full"&gt;关闭&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>popoverContainer.classList.remove('hidden');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('close-popover').addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>popoverContainer.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Bắt đầu trò chơi</p>
+<p class="p1"><span class="Apple-converted-space">            </span>function startGame() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>startScreen.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>endScreen.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>quizScreen.classList.remove('hidden');</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>currentQuestionIndex = 0;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>currentPrize = 0;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>questionsShuffled = [...questions];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>shuffle(questionsShuffled);</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Khôi phục quyền trợ giúp</p>
+<p class="p1"><span class="Apple-converted-space">                </span>lifelines = { '5050': true, 'audience': true, 'phone': true };</p>
+<p class="p1"><span class="Apple-converted-space">                </span>lifeline5050Btn.disabled = false;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>lifelineAudienceBtn.disabled = false;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>lifelinePhoneBtn.disabled = false;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>showQuestion();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Kết thúc trò chơi và hiển thị kết quả</p>
+<p class="p1"><span class="Apple-converted-space">            </span>function endGame(isWinner) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>quizScreen.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>endScreen.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (isWinner) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>finalPrizeDisplay.textContent = `恭喜！你赢得了 1,000,000 元！`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>finalPrizeDisplay.textContent = `你带走的奖金是: ${prizeLevels[currentQuestionIndex -1] || 0} 元。`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Gắn các sự kiện click</p>
+<p class="p1"><span class="Apple-converted-space">            </span>startBtn.addEventListener('click', startGame);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>restartBtn.addEventListener('click', startGame);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Bắt đầu màn hình ban đầu</p>
+<p class="p1"><span class="Apple-converted-space">            </span>startScreen.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
